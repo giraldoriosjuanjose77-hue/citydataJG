@@ -7,10 +7,10 @@ import numpy as np
 import streamlit as st
 
 
-st.set_page_config(page_title="Análisis de Sensores - Fix Time", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Análisis de Sensores", page_icon="📊", layout="wide")
 
-st.title("Análisis de Sensores — CSV (fix 'Time')")
-st.markdown("Sube tu CSV exportado (por ejemplo `time;temperature;humidity`) y la app procesará la columna de tiempo correctamente.")
+st.title("Análisis de Sensores")
+st.markdown("Sube tu CSV exportado")
 
 
 eafit_location = pd.DataFrame({'lat': [6.2006], 'lon': [-75.5783], 'location': ['Universidad EAFIT']})
@@ -32,7 +32,7 @@ def detect_delimiter(sample: str) -> str:
 
 uploaded_file = st.file_uploader('Seleccione archivo CSV', type=['csv', 'txt'], accept_multiple_files=False)
 if uploaded_file is None:
-    st.info('Sube el CSV (ej. time;temperature;humidity).')
+    st.info('Sube el CSV')
     st.stop()
 
 
